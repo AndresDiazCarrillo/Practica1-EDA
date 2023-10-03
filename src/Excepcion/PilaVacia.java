@@ -1,5 +1,7 @@
 package Excepcion;
 
-public class PilaVacia {
-
+public class PilaVacia extends Exception {
+	public PilaVacia(String message) {
+		super(message);
+	}
 }
