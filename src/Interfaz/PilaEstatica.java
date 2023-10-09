@@ -1,5 +1,8 @@
 package Interfaz;
 
+import Excepcion.MatrizLlena;
+import Excepcion.PilaVacia;
+
 public class PilaEstatica<T> implements Stack<T>{
 	
 	private Nodo<T> top;
@@ -10,9 +13,9 @@ public class PilaEstatica<T> implements Stack<T>{
 		this.tamano = 0;
 	}
 	
-	public void push(T elemento) {
+	public void push(T elemento) throws MatrizLlena {
 		if (isEmpty()) {
-			
+			throw new MatrizLlena("Error. La Pila esta llena.");
 		} else {
 			Nodo<T> aux = new Nodo<T>(elemento,top);
 			top = aux;
@@ -20,9 +23,9 @@ public class PilaEstatica<T> implements Stack<T>{
 		}
 	}
 	
-	public T pop(){
+	public T pop() throws PilaVacia {
 		if(isEmpty()) {
-			return null;
+			throw new PilaVacia("Error. La Pila esta vacia.");
 		} else {
 			T aux = top.getElemento();
 			Nodo<T> siguiente = top.getSiguiente();
@@ -33,9 +36,9 @@ public class PilaEstatica<T> implements Stack<T>{
 		}
 	}
 	
-	public T top(){
+	public T top()throws PilaVacia{
 		if(isEmpty()) {
-			return null;
+			throw new PilaVacia("Error. La Pila esta vacia.");
 		} else {
 			return top.getElemento();
 		}

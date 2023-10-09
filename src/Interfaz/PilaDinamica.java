@@ -1,5 +1,7 @@
 package Interfaz;
 
+import Excepcion.PilaVacia;
+
 public class PilaDinamica<T> implements Stack<T> {
 	
 	private Nodo<T> top;
@@ -16,9 +18,9 @@ public class PilaDinamica<T> implements Stack<T> {
 		this.tamano++;//se uincrementa el tamano de la pila 
 	}
 	
-	public T pop(){//sacar un elemento y lo elimina de la pila
+	public T pop()throws PilaVacia {
 		if(isEmpty()) {
-			return null;
+			throw new PilaVacia("Error. La Pila esta vacia.");
 		}else {
 			T aux = top.getElemento();
 			 /*referenciarlo pero no me asegura que se haya eliminado el elemento que se encontraba en el top
@@ -32,9 +34,9 @@ public class PilaDinamica<T> implements Stack<T> {
 		
 	}
 	
-	public T top() {
+	public T top() throws PilaVacia {
 		if(isEmpty()) {
-			return null;	
+			throw new PilaVacia("Error. La Pila esta vacia.");
 		}else
 			return top.getElemento();
 		
