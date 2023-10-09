@@ -26,4 +26,5 @@ public class Nodo <T> {
 		this.siguiente = siguiente;
 	}
 //es una prueba
+	//hola2
 }
