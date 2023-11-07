@@ -5,64 +5,60 @@ import Excepcion.PilaVacia;
 
 public class PilaEstatica<T> implements Stack<T>{
 	
-	private Nodo<T> top;
+	private T [] stack;
 	private int tamano;
+	private int top = -1;
 	
-	public PilaEstatica() {
-		top = null;
-		this.tamano = 0;
+	public PilaEstatica(int tamaño) {
+		stack = (T[]) new Object[tamano];
+		this.tamano = tamaño;
 	}
 	
 	public void push(T elemento) throws MatrizLlena {
-		if (isEmpty()) {
+		if (top == tamano - 1) {
 			throw new MatrizLlena("Error. La Pila esta llena.");
 		} else {
-			Nodo<T> aux = new Nodo<T>(elemento,top);
-			top = aux;
-			this.tamano = 0;
+			top++;
+			stack[top] = elemento;
 		}
 	}
 	
 	public T pop() throws PilaVacia {
-		if(isEmpty()) {
+		if(top == -1) {
 			throw new PilaVacia("Error. La Pila esta vacia.");
 		} else {
-			T aux = top.getElemento();
-			Nodo<T> siguiente = top.getSiguiente();
-			top = null;
-			top = siguiente;
-			this.tamano--;
-			return aux;
+			elemento = stack[top];
+			top = top -1;
 		}
+		return elemento
 	}
 	
 	public T top()throws PilaVacia{
-		if(isEmpty()) {
+		if(top == -1) {
 			throw new PilaVacia("Error. La Pila esta vacia.");
 		} else {
-			return top.getElemento();
+			return stack[top];
 		}
 	}
 	
 	public boolean isEmpty() {
-		return top == null;
+		return top == -1;
 	}
 	
 	public int size() {
-		return this.tamano;
+		return top + 1;
 	}
 	
 	public String toString() {
-		if(isEmpty()) {
+		if(top == -1) {
 			return "La pila esta vacia";
 		} else {
-			String res = "";
-			Nodo<T> aux = top;
-			while(aux != null) {
-				res = res+ aux.getElemento();
-				aux = aux.getSiguiente();
+			System.out.print("[ ");
+			for(int i=0; i <= top; i++) {
+				System.out.print(stack[i]+",");
 			}
-			return res;
+			System.out.println("\b ");
 		}
+		return null;
 	}
 }
