@@ -9,9 +9,9 @@ public class PilaEstatica<T> implements Stack<T>{
 	private int tamano;
 	private int top = -1;
 	
-	public PilaEstatica(int tamaño) {
+	public PilaEstatica(int tamano) {
 		stack = (T[]) new Object[tamano];
-		this.tamano = tamaño;
+		this.tamano = tamano;
 	}
 	
 	public void push(T elemento) throws MatrizLlena {
@@ -27,10 +27,10 @@ public class PilaEstatica<T> implements Stack<T>{
 		if(top == -1) {
 			throw new PilaVacia("Error. La Pila esta vacia.");
 		} else {
-			elemento = stack[top];
-			top = top -1;
+			T elemento = stack[top];
+			top--;
+			return elemento;
 		}
-		return elemento
 	}
 	
 	public T top()throws PilaVacia{
@@ -57,7 +57,7 @@ public class PilaEstatica<T> implements Stack<T>{
 			for(int i=0; i <= top; i++) {
 				System.out.print(stack[i]+",");
 			}
-			System.out.println("\b ");
+			System.out.println("\b ]");
 		}
 		return null;
 	}

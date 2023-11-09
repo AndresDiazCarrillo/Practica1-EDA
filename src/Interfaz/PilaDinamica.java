@@ -56,7 +56,7 @@ public class PilaDinamica<T> implements Stack<T> {
 			String res="";
 			Nodo<T> aux=top;
 			while(aux!=null) {
-				res= res+ aux.getElemento();
+				res= res + aux.getElemento();
 				aux = aux.getSiguiente();
 					
 			}	
