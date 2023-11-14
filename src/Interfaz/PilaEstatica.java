@@ -53,11 +53,11 @@ public class PilaEstatica<T> implements Stack<T>{
 		if(top == -1) {
 			return "La pila esta vacia";
 		} else {
-			System.out.print("[ ");
-			for(int i=0; i <= top; i++) {
-				System.out.print(stack[i]+",");
+			System.out.print("[");
+			for(int i=top; i >= 0; i--) {
+				System.out.print(" " + stack[i] + " ");
 			}
-			System.out.println("\b ]");
+			System.out.println("]");
 		}
 		return null;
 	}

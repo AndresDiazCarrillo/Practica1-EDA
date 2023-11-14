@@ -1,84 +1,71 @@
 package Interfaz;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 import Excepcion.MatrizLlena;
 import Excepcion.PilaVacia;
 
 public class Main {
 
-	public static void main(String args[]) throws IOException {
-		Scanner scanner=new Scanner(System.in);
-		int opciones;
+	public static void main(String args[]) throws IOException, MatrizLlena, PilaVacia {
+		Stack<Integer> pila1 = null;
+		Stack<Integer> pila2 = null;
 		
-		System.out.println("¿Que tipo de pila desea usar?");
-		System.out.println("1. pila estatica");
-		System.out.println("2. Pila dinamica");
+		int tamaño = 9;
 		
-		opciones = scanner.nextInt();
+		pila1 = new PilaEstatica<>(tamaño);
 		
-		Stack<Integer> pila = null;
-		
-		if (opciones == 1) {
-			System.out.println("Ingrese el tamaño de la pila estatica");
-			int tamaño = scanner.nextInt();
-			pila = new PilaEstatica<>(tamaño);
-		} else if (opciones == 2) {
-			pila = new PilaDinamica<>();
-		} else {
-			System.out.println("Opcion no valida");
-		}
-		
-		while (true) {
-		    System.out.println("\nOperaciones en la pila:");
-		    System.out.println("1. Push");
-		    System.out.println("2. Pop");
-		    System.out.println("3. Mostrar top");
-		    System.out.println("4. Mostrar tamaño");
-		    System.out.println("5. Mostrar pila");
-		    System.out.println("6. Salir");
-
-		    int operacion = scanner.nextInt();
-		    
-		    try {
-		        switch (operacion) {
-		            case 1:
-		                System.out.println("Ingrese el elemento a agregar:");
-		                int elementoPush = scanner.nextInt();
-		                pila.push(elementoPush);
-		                break;
-
-		            case 2:
-		                int elementoPop = pila.pop();
-		                System.out.println("Elemento pop: " + elementoPop);
-		                break;
-
-		            case 3:
-		                System.out.println("Top de la pila: " + pila.top());
-		                break;
-
-		            case 4:
-		                System.out.println("Tamaño de la pila: " + pila.size());
-		                break;
-
-		            case 5:
-		                System.out.println("Contenido de la pila: " + pila.toString());
-		                break;
-
-		            case 6:
-		                System.out.println("Saliendo del programa");
-		                scanner.close();
-		                return;
-
-		            default:
-		                System.out.println("Opción no válida");
-		        }
-		    } catch (MatrizLlena | PilaVacia e) {
+		for(int i = 1; i <= 10; i++) {
+			try {
+				pila1.push(i);
+			} catch (MatrizLlena e) {
 		        System.out.println(e.getMessage());
 		    }
 		}
-
+		System.out.print("Contenido de la pila estatica: ");
+		pila1.toString();
+		
+		pila2 = new PilaDinamica<>();
+		
+		for(int i = 1; i <= 9; i++) {
+				pila2.push(i);
+				
+		}
+		
+		System.out.println("Contenido de la pila dinamica: [ " + pila2.toString() + "]");
+		
+		Pilas(pila1, pila2);
+		
 	}
 	
+	public static void Pilas(Stack<Integer> pila1, Stack<Integer> pila2) {
+		
+		try {
+			pila1.push(8);
+			pila1.pop();
+			pila1.push(5);
+			pila1.push(8);
+			pila1.push(4);
+			System.out.print("Contenido de la pila estatica ampliada: ");
+			pila1.toString();
+			
+			} catch (MatrizLlena | PilaVacia e) {
+		        System.out.println(e.getMessage());
+		    }
+			
+		
+		try {
+			pila2.push(8);
+			pila2.pop();
+			pila2.push(5);
+			pila2.push(8);
+			pila2.push(4);
+			System.out.println("Contenido de la pila dinamica: [" + pila2.toString() + "]");
+			
+			
+			} catch (MatrizLlena | PilaVacia e) {
+		        System.out.println(e.getMessage());
+		    }
+	
+	}
 }

@@ -58,7 +58,7 @@ public class PilaDinamica<T> implements Stack<T> {
 			while(aux!=null) {
 				res= res + aux.getElemento();
 				aux = aux.getSiguiente();
-					
+				res = res + " ";	
 			}	
 			return res;
 		}
