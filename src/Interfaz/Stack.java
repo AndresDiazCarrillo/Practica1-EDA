@@ -7,7 +7,7 @@ import Excepcion.PilaVacia;
  * Inerfaz que define el comportamiento de la pila.
  * @author andre
  *
- * @param <T> Tipo de elementos almacenados en la pila.
+ * @param <T> Tipo de elemento almacenado en la pila
  */
 public interface Stack<T> {
 	

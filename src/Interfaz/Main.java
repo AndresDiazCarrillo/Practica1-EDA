@@ -4,13 +4,14 @@ import java.io.IOException;
 
 import Excepcion.MatrizLlena;
 import Excepcion.PilaVacia;
+
 /**
  * Clase que se encarga de trabajar con las pilas.
- * 
  * @author andre
  *
  */
 public class Main {
+	
 	/**
 	 * Clase en la que creamos la pila estatica y la dinamica y agregamos unos elementos a ellas.
 	 * 
@@ -55,6 +56,7 @@ public class Main {
 		Pilas(pila1, pila2);
 		
 	}
+	
 	/**
 	 * Clase que trabaja con la pila estatica y la dinamica realizando otras operaciones adicionales.
 	 * 

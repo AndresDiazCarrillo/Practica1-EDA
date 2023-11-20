@@ -1,12 +1,12 @@
 package Interfaz;
+
 /**
  * Clase que se encarga de representar un nodo en una estructura de datos.
  * @author andre
  *
- * @param <T> Tipo de elemento almacenado en el nodo.
+ * @param <T> Tipo de elemento almacenado en el nodo
  */
-//nodo generico
-public class Nodo <T> {
+public class Nodo <T> { //nodo generico
 	/**
 	 * Objeto que te indica cual es el elemento almacenado en el nodo
 	 */
@@ -22,8 +22,7 @@ public class Nodo <T> {
 	 * @param elemento Elemento a guardar.
 	 * @param siguiente Siguiente posicion al elemento guardado. 
 	 */
-	//constructor
-	public Nodo(T elemento, Nodo<T> siguiente) {
+	public Nodo(T elemento, Nodo<T> siguiente) { 	//constructor
 		this.elemento =  elemento;
 		this.siguiente = siguiente;
 	}
@@ -33,8 +32,7 @@ public class Nodo <T> {
 	 * 
 	 * @return Elemento en el nodo.
 	 */
-	//metodos get/ set
-	public T getElemento() {
+	public T getElemento() { 	//metodos get/ set
 		return elemento;
 	}
 	

@@ -2,16 +2,28 @@ package Interfaz;
 
 import Excepcion.MatrizLlena;
 import Excepcion.PilaVacia;
+
 /**
  * Implementacion de una pila estatica.
  * @author andre
- * 
- * @param <T> Tipo de elemento almacenado en la pila.
+ *
+ * @param <T> Tipo de elemento almacenado en la pila
  */
 public class PilaEstatica<T> implements Stack<T>{
 	
+	/**
+	 * Tamaño de la pila
+	 */
 	private T [] stack;
+	
+	/**
+	 * El valor del tamaño de la pila
+	 */
 	private int tamano;
+	
+	/**
+	 * Valor del top
+	 */
 	private int top = -1;
 	
 	/**

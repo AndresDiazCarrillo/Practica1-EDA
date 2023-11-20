@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Interfaz","l":"PilaDinamica"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Interfaz","l":"Main"},{"p":"Excepcion","l":"MatrizLlena"},{"p":"Interfaz","l":"Nodo"},{"p":"Interfaz","l":"PilaDinamica"},{"p":"Interfaz","l":"PilaEstatica"},{"p":"Excepcion","l":"PilaVacia"},{"p":"Interfaz","l":"Stack"}];updateSearchResults();

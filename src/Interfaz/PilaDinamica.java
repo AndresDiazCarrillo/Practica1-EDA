@@ -1,6 +1,7 @@
 package Interfaz;
 
 import Excepcion.PilaVacia;
+
 /**
  * Implementacion de una pila dinamica.
  * @author andre
@@ -9,17 +10,24 @@ import Excepcion.PilaVacia;
  */
 public class PilaDinamica<T> implements Stack<T> {
 	
+	/**
+	 * Objeto que indica cual es la posicion siguiente al elemento
+	 */
 	private Nodo<T> top; // nodo superior de la pila
+	
+	/**
+	 * Tamaño de la pila
+	 */
 	private int tamano; // tamaño actual de la pila
+	
 	/**
 	 * Costuctor de la clase PilaDinamica. Inicializa la pila como vacia.
-	 * 
-	 * @param tamaño Tamaño de la pila.
 	 */
 	public PilaDinamica() {
 		top = null; //no hay nada en el top aun
 		this.tamano =0;// la pila se encuentra vacia en un inicio
 	}
+	
 	/**
 	 * Agrega un elemento a la pila.
 	 * 
